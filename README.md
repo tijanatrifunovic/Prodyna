@@ -1,6 +1,6 @@
 # Prodyna
 
-I decided to use Angular to do this coding chalange, because tasks required dynamic loading, deleting, and adding data, so i thought angular was ideal for this purpose. For styling I have used bootstrap.
+I decided to use Angular to do this coding chalange, because tasks required dynamic loading, deleting, and adding data, so I thought angular was ideal for this purpose. For styling I have used bootstrap.
 
 ## Development server
 
