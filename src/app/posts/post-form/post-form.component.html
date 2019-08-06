@@ -1,0 +1,48 @@
+<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <div *ngIf="postForm.controls['userId'].invalid && (postForm.controls['userId'].dirty || postForm.controls['userId'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="postForm.controls['userId'].errors.required">
+            User id is required
+        </div>
+        <div *ngIf="postForm.controls['userId'].errors.pattern">
+            User id must be number
+        </div>
+    </div>
+    <div *ngIf="postForm.controls['title'].invalid && (postForm.controls['title'].dirty || postForm.controls['title'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="postForm.controls['title'].errors.required">
+            Title is required.
+        </div>
+    </div>
+    <div *ngIf="postForm.controls['body'].invalid && (postForm.controls['body'].dirty || postForm.controls['body'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="postForm.controls['body'].errors.required">
+            Body is required.
+        </div>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">User id</span>
+        </div>
+        <input type="text" class="form-control" aria-label="UserId" formControlName="userId"
+            aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Title</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Title" formControlName="title"
+                aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Body</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Body" formControlName="body"
+                    aria-describedby="basic-addon1">
+            </div>
+    <button type="submit" class="btn btn-primary">Add post</button>
+
+</form>
+<br/>

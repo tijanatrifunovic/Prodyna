@@ -1,0 +1,30 @@
+<h1>Add new post</h1>
+<app-post-form (addedPost)="addPost($event)"></app-post-form>
+
+<h1>Posts</h1>
+<app-filter-textbox (changed)="filter($event)"></app-filter-textbox>
+<div _ngcontent-nbk-c2="" class="accordion" id="accordionExample">
+    <div _ngcontent-nbk-c2="" class="card" *ngFor="let post of filteredPosts" [id]="'card' + post.id">
+        <div _ngcontent-nbk-c2="" class="card-header" [id]="'heading' + post.id">
+
+            <div class="input-group">
+                <h2 _ngcontent-nbk-c2="" class="mb-0" style="width: 96%;"><button _ngcontent-nbk-c2="" [attr.aria-controls]="'collapse' + post.id" aria-expanded="false"
+                        class="btn btn-link collapsed input-group-prepend" [attr.data-target]="'#collapse' + post.id"
+                        data-toggle="collapse" type="button">{{ post.title | titlecase }}</button></h2>
+
+                <div class="">
+                    <button class="btn btn-danger" type="button" (click)="remove(post.id)">X</button>
+                </div>
+            </div>
+        </div>
+
+        <div _ngcontent-nbk-c2="" [attr.aria-labelledby]="'heading' + post.id" class="collapse"
+            data-parent="#accordionExample" [id]="'collapse' + post.id">
+            <div _ngcontent-nbk-c2="" class="card-body">{{ post.body | capitalize }}</div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!filteredPosts || !filteredPosts.length">
+    No posts found
+</div>
