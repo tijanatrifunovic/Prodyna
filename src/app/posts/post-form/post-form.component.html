@@ -28,21 +28,25 @@
             aria-describedby="basic-addon1">
     </div>
     <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Title</span>
-            </div>
-            <input type="text" class="form-control" aria-label="Title" formControlName="title"
-                aria-describedby="basic-addon1">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Title</span>
         </div>
+        <input type="text" class="form-control" aria-label="Title" formControlName="title"
+            aria-describedby="basic-addon1">
+    </div>
 
-        <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">Body</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Body" formControlName="body"
-                    aria-describedby="basic-addon1">
-            </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Body</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Body" formControlName="body"
+            aria-describedby="basic-addon1">
+    </div>
     <button type="submit" class="btn btn-primary">Add post</button>
 
 </form>
-<br/>
+<div class="d-flex justify-content-center" *ngIf="showSpinner">
+    <div class="spinner-grow text-danger m-5" role="status">
+    </div>
+</div>
+<br />

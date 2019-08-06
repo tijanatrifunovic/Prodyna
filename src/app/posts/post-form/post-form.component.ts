@@ -12,6 +12,7 @@ import { PostsListComponent } from '../posts-list/posts-list.component';
 })
 export class PostFormComponent implements OnInit {
     private _post: IPost;
+    showSpinner = false;
     @Input() get post() {
         return this._post;
     }
@@ -36,10 +37,14 @@ export class PostFormComponent implements OnInit {
 
     onSubmit() {
         if (this.postForm.valid) {
+            this.showSpinner = true;
             console.log(this.postForm.value);
             this.dataService
                 .addPost(this.postForm.value)
-                .subscribe(post => this.post = post);
+                .subscribe(post => {
+                    this.post = post
+                    this.showSpinner = false;
+                });
             this.postForm.reset();
         } else {
             this.validateAllFormFields(this.postForm);
