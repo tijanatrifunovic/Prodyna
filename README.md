@@ -30,7 +30,6 @@ more posts are loaded until all posts are loaded.)
 3. At the top of the page is the form for adding new post. It works with POST http://jsonplaceholder.typicode.com/posts request. Data is sent on the server. Since the data on the server is not updated, I add a new post to the list of posts that I store in the application itself, and thus display it on the page.
 4. At the right side of every post is "X" button, that removes post from the list. For that I call DELETE http://jsonplaceholder.typicode.com/posts/id, since the data on the server is not updated, I remove a post from the list of posts that I store in the application itself, and thus remove it from the page.
 5. Loading spinner is showned before data is received from the server. Also, when new post is added to the page, loading spinner is showned, till the data come from server.
-
+6*. I have added infinite scroll using "ngx-infinite-scroll", initially  20 items are listed, and as user scroll, new 20 items are added.
 ## More time
-I didn't have enough time to finish this lazy loading infinite scroll, I hope to do it till the end of a day and commit it than.
-Also, if I had more time, I would try to organize components better.
+If I had more time, I would try to organize components better.
